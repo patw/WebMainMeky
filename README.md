@@ -164,12 +164,15 @@ second one, so keep both profiles and report both numbers.
 git clone git@github.com:patw/WebMainMeky.git && cd WebMainMeky
 cp .env.example .env          # set OPENAI_BASE_URL / OPENAI_API_KEY / OPENAI_MODEL
 uv venv --python 3.12 .venv
-uv pip install -e .
+uv pip install -e ".[dev,eval]"     # service deps + pytest + scoring deps
 .venv/bin/python -m pytest tests -q      # 32 tests
 ```
 
-Dependencies: fastapi, uvicorn, pydantic, lxml, requests, openai, moofile. Optional for
-scoring: jieba, rouge-score, rapidfuzz. No model, no GPU, no embedding step.
+`[dev]` = pytest, httpx (tests). `[eval]` = jieba, rouge-score, rapidfuzz (scoring
+scripts). Plain `pip install -e .` gives you the service only.
+
+Dependencies: fastapi, uvicorn, pydantic, lxml, requests, openai, moofile. No model, no
+GPU, no embedding step.
 
 The repo ships a seeded rule store in `store/` (210 rules, 184 active, 60 golden pages,
 layout census). `WMM_DATA_DIR` defaults to `store`, so a fresh install is immediately
