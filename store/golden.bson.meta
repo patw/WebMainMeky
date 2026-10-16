@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "indexes": [
+    "url"
+  ],
+  "vector_indexes": {},
+  "text_indexes": []
+}

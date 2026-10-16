@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "indexes": [
+    "signature",
+    "status",
+    "level",
+    "provenance"
+  ],
+  "vector_indexes": {},
+  "text_indexes": []
+}

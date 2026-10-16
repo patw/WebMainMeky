@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "indexes": [
+    "fine",
+    "coarse"
+  ],
+  "vector_indexes": {},
+  "text_indexes": []
+}
